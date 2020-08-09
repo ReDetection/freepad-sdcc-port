@@ -1,10 +1,17 @@
 {
+    "env": {
+        "ZSTACK_PATH": "/Volumes/ZStack/ZStack302",
+        "SDCC_PATH": "/usr/local/Cellar/sdcc/4.0.0/"
+    },
     "configurations": [{
         "name": "Mac",
         "forcedInclude": ["${workspaceRoot}/Source/preinclude.h"],
         "defines": ["HAL_BOARD_FREEPAD", "HAL_UART=TRUE", "FREEPAD_ENABLE_TL"],
         "includePath": [
             "${workspaceRoot}",
+            "${workspaceRoot}/zstack-lib",
+            "${env:SDCC_PATH}/share/sdcc/include/",
+            "${env:SDCC_PATH}/share/sdcc/include/mcs51/",
             "${env:ZSTACK_PATH}/Components/mac/include/",
             "${env:ZSTACK_PATH}/Components/mt",
             "${env:ZSTACK_PATH}/Components/zmac",
@@ -25,9 +32,10 @@
             "${env:ZSTACK_PATH}/Projects/zstack/ZMain/TI2530DB",
             "${env:ZSTACK_PATH}/Projects/zstack/HomeAutomation/Source"
         ],
-        "intelliSenseMode": "clang-x64",
-        "compilerPath": "/usr/bin/clang",
-        "cStandard": "c99",
+        "intelliSenseMode": "gcc-x64",
+        "compilerPath": "/usr/local/Cellar/sdcc/4.0.0/bin/sdcc",
+        "cStandard": "gnu18",
+        "compilerArgs": [],
         "cppStandard": "c++17"
     }],
     "version": 4

@@ -1,0 +1,21 @@
+
+`SDCC cannot pass structure as function argument` issue???
+OMG really http://sdcc.sourceforge.net/doc/sdccman.pdf chapter 3.1.1 page 25
+https://sourceforge.net/p/sdcc/mailman/sdcc-user/thread/002001c16180%242990ace0%240664dfdf%40PULSAR/#msg7450322
+
+
+check if sdcc can address more than 64k flash
+https://sourceforge.net/p/sdcc/mailman/sdcc-user/thread/47A8EE50.5050103%40aldu.net/#msg18534903
+https://sourceforge.net/projects/ccflasher/
+
+
+Find and check this macro
+```
+#define CSTACK_BEG ((uint8 const *)(_Pragma("segment=\"XSTACK\"") __segment_begin("XSTACK")))
+#define CSTACK_END ((uint8 const *)(_Pragma("segment=\"XSTACK\"") __segment_end("XSTACK"))-1)
+// Stack Initialization Value
+#define STACK_INIT_VALUE  0xCD
+```
+
+check ISR_FUNCTION definitions!
+
